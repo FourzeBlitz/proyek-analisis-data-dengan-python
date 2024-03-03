@@ -8,13 +8,15 @@ import numpy as np
 sns.set_theme(style="dark")
 
 # load dataset ori
-all_df = pd.read_csv("Dashboard\hour.csv")
+all_df_hour = pd.read_csv("./hour.csv")
+all_df_day = pd.read_csv("./day.csv")
 
 # convert to datetime format
-all_df["dteday"] = pd.to_datetime(all_df["dteday"])
+all_df_hour["dteday"] = pd.to_datetime(all_df_hour["dteday"])
+all_df_day["dteday"] = pd.to_datetime(all_df_day["dteday"])
 
-min_date = all_df["dteday"].min()
-max_date = all_df["dteday"].max()
+min_date = all_df_hour["dteday"].min()
+max_date = all_df_hour["dteday"].max()
 
 
 # sidebar
@@ -30,7 +32,7 @@ with st.sidebar:
     )
 
 
-main_df = all_df.drop("instant", axis=1)
+main_df = all_df_hour.drop("instant", axis=1)
 alltime_df = main_df
 main_df = main_df[
     (main_df["dteday"] >= str(start_date)) & (main_df["dteday"] <= str(end_date))
@@ -45,7 +47,7 @@ with filtered_data:
     st.write(main_df)
 
 with raw_data:
-    st.write(all_df)
+    st.write(all_df_hour)
 
 
 # line chart
