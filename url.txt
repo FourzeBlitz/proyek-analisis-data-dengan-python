@@ -1,1 +1,1 @@
-https://proyekbikesharingleo.streamlit.app/
+https://bikesharingleo.streamlit.app/
