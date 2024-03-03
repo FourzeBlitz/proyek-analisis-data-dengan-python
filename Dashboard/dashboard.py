@@ -8,8 +8,8 @@ import numpy as np
 sns.set_theme(style="dark")
 
 # load dataset ori
-all_df_hour = pd.read_csv('./Dashboard/hour.csv')
-all_df_day = pd.read_csv("./Dashboard/day.csv")
+all_df_hour = pd.read_csv("https://raw.githubusercontent.com/FourzeBlitz/proyek-analisis-data-dengan-python/main/Data/hour.csv")
+all_df_day = pd.read_csv("https://raw.githubusercontent.com/FourzeBlitz/proyek-analisis-data-dengan-python/main/Data/day.csv")
 
 # convert to datetime format
 all_df_hour["dteday"] = pd.to_datetime(all_df_hour["dteday"])
